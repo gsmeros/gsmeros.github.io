@@ -1,242 +1,29 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nuvio — Software, Mobile & AI Automation</title>
-  <meta name="description" content="Nuvio is a boutique engineering studio delivering software development, mobile apps, and AI automation." />
-  <meta name="theme-color" content="#0f172a" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Nuvio — Software, Mobile & AI Automation" />
-  <meta property="og:description" content="Boutique engineering studio delivering software, mobile apps, and AI automation." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/" />
-  <meta property="og:image" content="https://YOUR_GITHUB_USERNAME.github.io/og-image.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting to Personal Worth...</title>
   <style>
-    :root {
-      --bg: #0b1020;
-      --panel: #0f172a;
-      --text: #e5e7eb;
-      --muted: #b6c2d9;
-      --accent: #60a5fa;
-      --border: #1f2a44;
-      --card: #111827;
-      --ok: #34d399;
-      --warn: #f59e0b;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f8fafc;
-        --panel: #ffffff;
-        --text: #0b1020;
-        --muted: #465067;
-        --accent: #2563eb;
-        --border: #e5e7eb;
-        --card: #ffffff;
-      }
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(96,165,250,.15), transparent 60%), var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-    header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(10px);
-      background: color-mix(in oklab, var(--bg) 80%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
-    .brand-logo { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; background: linear-gradient(135deg, var(--accent), #8b5cf6); color: white; font-weight: 800; }
-    .nav a { color: var(--text); margin-left: 20px; opacity: .9; }
-    .nav a:hover { opacity: 1; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 92%, #ffffff 8%), var(--panel)); color: var(--text); font-weight: 600; text-decoration: none; box-shadow: 0 1px 0 rgba(255,255,255,.05) inset; }
-    .btn.primary { border-color: color-mix(in oklab, var(--accent) 60%, var(--border)); background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 20%, var(--panel)), var(--panel)); }
-    .btn:hover { transform: translateY(-1px); }
-
-    .hero { padding: 72px 0 40px; }
-    .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: center; }
-    .headline { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; letter-spacing: -0.4px; margin: 0 0 14px; }
-    .subtitle { color: var(--muted); font-size: 18px; margin: 0 0 24px; }
-    .pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; color: var(--muted); font-size: 12px; }
-    .kpis { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 22px; }
-    .kpi { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
-    .kpi strong { display:block; font-size: 20px; }
-
-    .section { padding: 56px 0; }
-    .section h2 { font-size: 24px; margin: 0 0 18px; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; }
-    .card h3 { margin: 0 0 8px; font-size: 18px; }
-    .card p { margin: 0 0 10px; color: var(--muted); }
-    .list { margin: 0; padding-left: 18px; }
-
-    .about { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .about .panel { background: var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; }
-
-    .cta { text-align:center; padding: 64px 0 72px; }
-    .cta .box { display:inline-block; background: var(--panel); border:1px solid var(--border); border-radius: 18px; padding: 24px; }
-
-    footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); font-size: 14px; }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
-      .about { grid-template-columns: 1fr; }
-      .kpis { grid-template-columns: 1fr 1fr; }
-    }
+    body { font-family: -apple-system, sans-serif; text-align: center; padding: 2rem; max-width: 320px; margin: 2rem auto; }
+    .btn { display: inline-block; padding: 1rem 2rem; background: #007AFF; color: white; text-decoration: none; border-radius: 12px; font-weight: 600; margin-top: 1rem; }
+    .btn:active { opacity: 0.8; }
+    p { color: #666; }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Nuvio",
-    "url": "https://YOUR_GITHUB_USERNAME.github.io/",
-    "logo": "https://YOUR_GITHUB_USERNAME.github.io/logo.svg",
-    "sameAs": ["https://github.com/YOUR_GITHUB_USERNAME"],
-    "description": "Boutique engineering studio for software development, mobile apps, and AI automation.",
-    "email": "georgesmeros@gmail.com",
-    "address": {"@type":"PostalAddress","addressCountry":"GB"}
-  }
-  </script>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="brand-logo" aria-hidden="true">N</div>
-        <span>Nuvio</span>
-      </div>
-      <nav aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="#contact">Get a quote</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="pill">🚀 Outcome‑driven engineering</span>
-          <h1 class="headline">We build reliable software, delightful mobile apps, and pragmatic AI automations.</h1>
-          <p class="subtitle">Nuvio is a small, senior team shipping fast without breaking quality. We partner with startups and product teams to deliver measurable results.</p>
-          <div style="display:flex; gap:12px; flex-wrap: wrap;">
-            <a class="btn primary" href="#contact">Start a project</a>
-            <a class="btn" href="#services">Explore services</a>
-          </div>
-          <div class="kpis">
-            <div class="kpi"><strong>10+ yrs</strong><span>Engineering experience</span></div>
-            <div class="kpi"><strong>24/7</strong><span>Monitoring & support</span></div>
-            <div class="kpi"><strong>∞</strong><span>Ownership mindset</span></div>
-          </div>
-        </div>
-        <div>
-          <div class="card" aria-hidden="true">
-            <h3 style="margin:0 0 6px;">What we deliver</h3>
-            <ul class="list">
-              <li>⚙️ Backend APIs, integrations, cloud infra</li>
-              <li>📱 iOS & Android apps (Swift, Kotlin, RN)</li>
-              <li>🧠 AI agents, RAG, workflow automation</li>
-              <li>🔐 Security, observability, CI/CD</li>
-            </ul>
-          </div>
-          <div class="card" style="margin-top:12px;" aria-hidden="true">
-            <h3 style="margin:0 0 6px;">How we work</h3>
-            <ul class="list">
-              <li>Small teams, weekly demos</li>
-              <li>Fixed‑scope or time & materials</li>
-              <li>Clear SLAs and documentation</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <h2>Services</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>Software Development</h3>
-            <p>Design and build resilient services, APIs, and internal tools. We optimize for reliability, performance, and developer experience.</p>
-            <ul class="list">
-              <li>REST/GraphQL APIs, event‑driven systems</li>
-              <li>AWS/Azure/GCP, IaC, observability</li>
-              <li>Integrations: payments, KYC, maps, analytics</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Mobile Development</h3>
-            <p>Native apps that feel fast and polished, from MVP to scale. Deep experience with SDKs and complex integrations.</p>
-            <ul class="list">
-              <li>iOS (Swift/SwiftUI), Android (Kotlin)</li>
-              <li>React Native & cross‑platform SDKs</li>
-              <li>Automated testing, releases, telemetry</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>AI Automation</h3>
-            <p>Pragmatic AI that saves time and money: agents, RAG, and workflow automation wired into your stack—secure and observable.</p>
-            <ul class="list">
-              <li>Retrieval‑augmented generation (RAG)</li>
-              <li>Agents for support, ops, and QA</li>
-              <li>Data pipelines, evaluation, guardrails</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container about">
-        <div class="panel">
-          <h2>About Nuvio</h2>
-          <p>We are senior engineers who have shipped products across fintech, compliance, sports, and consumer apps. We value maintainability, sensible architecture, and crisp communication.</p>
-        </div>
-        <div class="panel">
-          <h2>Engagement</h2>
-          <ul class="list">
-            <li>Pilot in 2–4 weeks → iterate or scale</li>
-            <li>Dedicated squad or embedded engineers</li>
-            <li>Code ownership, docs, and handover included</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="container">
-        <div class="box">
-          <h2 style="margin-top:0">Ready to build?</h2>
-          <p>Tell us about your project and timeline. We typically reply within one business day.</p>
-          <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:10px;">
-            <!-- Replace mailto with your email -->
-            <a class="btn primary" href="mailto:georgesmeros@gmail.com?subject=Nuvio%20Project%20Inquiry">Email us</a>
-            <!-- Replace with your GitHub profile or booking link -->
-            <a class="btn" href="https://github.com/gsmeros" target="_blank" rel="noopener">View work</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div>© <span id="y"></span> Nuvio. All rights reserved. | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></div>
-  </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <p>Opening Personal Worth...</p>
+  <p><strong>If nothing happens, tap the button below:</strong></p>
+  <a href="#" id="openApp" class="btn">Open Personal Worth</a>
+  <script>
+    (function() {
+      var params = window.location.search || '';
+      var appUrl = 'personalworth://oauth/callback' + params;
+      document.getElementById('openApp').href = appUrl;
+      // Try JS redirect (may be blocked on iOS Safari)
+      window.location.replace(appUrl);
+      // Fallback: user taps the button above
+    })();
+  </script>
 </body>
 </html>
