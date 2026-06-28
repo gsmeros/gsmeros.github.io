@@ -7,7 +7,6 @@
   <style>
     body { font-family: -apple-system, sans-serif; text-align: center; padding: 2rem; max-width: 320px; margin: 2rem auto; }
     .btn { display: inline-block; padding: 1rem 2rem; background: #007AFF; color: white; text-decoration: none; border-radius: 12px; font-weight: 600; margin-top: 1rem; }
-    .btn:active { opacity: 0.8; }
     p { color: #666; }
   </style>
 </head>
@@ -20,9 +19,7 @@
       var params = window.location.search || '';
       var appUrl = 'personalworth://oauth/callback' + params;
       document.getElementById('openApp').href = appUrl;
-      // Try JS redirect (may be blocked on iOS Safari)
       window.location.replace(appUrl);
-      // Fallback: user taps the button above
     })();
   </script>
 </body>
